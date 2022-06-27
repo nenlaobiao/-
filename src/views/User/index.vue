@@ -1,6 +1,6 @@
 <template>
 <div>
-    <router-view></router-view>
+    用户信息
 </div>
 </template>
 

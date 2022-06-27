@@ -1,6 +1,6 @@
 <template>
 <div>
-    <router-view></router-view>
+    房子列表
 </div>
 </template>
 
