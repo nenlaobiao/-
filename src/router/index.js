@@ -6,6 +6,7 @@ import User from '@/views/User'
 import HouseList from '@/views/HouseList'
 import InfoList from '@/views/InfoList'
 import Login from '@/views/Login'
+import Address from '@/views/Address'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +21,8 @@ const routes = [
       { path: 'infolist', component: InfoList }
     ]
   },
-  { path: '/login', component: Login }
+  { path: '/login', component: Login },
+  { path: '/address', component: Address }
 
 ]
 

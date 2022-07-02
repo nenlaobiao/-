@@ -7,7 +7,7 @@ import Vant from 'vant'
 import 'amfe-flexible'
 import 'vant/lib/index.less'
 // import '@/styles/iconfont.less'
-
+Vue.prototype.$arr = require('lodash/array')
 Vue.use(Vant)
 Vue.config.productionTip = false
 
