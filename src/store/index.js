@@ -8,7 +8,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: ''
+    token: '',
+    nowAddress: {
+      label: '北京',
+      pinyin: 'beijing',
+      short: 'bj',
+      value: 'AREA|88cff55c-aaa4-e2e0'
+    },
+    allDatas: {}
   },
   getters: {
   },
@@ -18,6 +25,12 @@ export default new Vuex.Store({
     },
     removeToken (state) {
       state.token = ''
+    },
+    changeAddress (state, Address) {
+      state.nowAddress = Address
+    },
+    addDatas (state, data) {
+      state.allDatas = data
     }
   },
   actions: {

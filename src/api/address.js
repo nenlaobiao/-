@@ -12,3 +12,13 @@ export const getAddressList = (level) => {
     }
   })
 }
+
+/**
+ * 获取热门城市列表接口
+ * @returns
+ */
+export const getHotAddress = () => {
+  return request({
+    url: 'area/hot'
+  })
+}

@@ -1,17 +1,14 @@
 import request from '@/utils/request.js'
+import store from '@/store/index'
+/**
+ * 获租房群信息接口
+ * @returns
+ */
 export const getGroupInfo = () => {
   return request({
     url: '/home/groups',
     params: {
-      area: 'AREA|88cff55c-aaa4-e2e0'
-    }
-  })
-}
-export const GroupInfo = () => {
-  return request({
-    url: '/home/groups',
-    params: {
-      area: 'AREA|88cff55c-aaa4-e2e0'
+      area: store.state.nowAddress.value
     }
   })
 }

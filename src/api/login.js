@@ -1,5 +1,4 @@
 import request from '@/utils/request.js'
-import store from '@/store/index'
 
 /**
  *用户登录请求接口
@@ -13,12 +12,14 @@ export const LoginAPI = (data) => {
     data
   })
 }
+/**
+ * 登出接口
+ * @returns
+ */
 export const LogoutAPI = () => {
   return request({
     method: 'POST',
-    url: '/user/logout',
-    headers: {
-      Authorization: store.state.token
-    }
+    url: '/user/logout'
+
   })
 }

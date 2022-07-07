@@ -9,7 +9,9 @@
       @search="onSearch"
     >
       <template #label>
-        <van-button type="primary" size="mini" to="address">地址</van-button>
+        <van-button type="primary" size="mini" to="address">{{
+          $store.state.nowAddress.label
+        }}</van-button>
       </template>
       <template #action>
         <van-icon name="location-o" size="large " color="#fff" />
@@ -45,7 +47,7 @@
       </van-swipe-item>
     </van-swipe>
     <van-grid>
-      <van-grid-item>
+      <van-grid-item to="houselist">
         <template #icon>
           <img
             src="@/assets/home1.png"
@@ -57,7 +59,7 @@
           <h2>整租</h2>
         </template>
       </van-grid-item>
-      <van-grid-item>
+      <van-grid-item to="houselist">
         <template #icon>
           <img
             src="@/assets/home2.png"
@@ -106,12 +108,14 @@
               round
               width="50px"
               height="50px"
-              :src="'http://liufusong.top:8080'+item.imgSrc"
+              :src="'http://liufusong.top:8080' + item.imgSrc"
             />
           </template>
           <template #text>
-            <div><p>{{item.desc}}</p>
-            <p>{{item.title}}</p></div>
+            <div>
+              <p>{{ item.desc }}</p>
+              <p>{{ item.title }}</p>
+            </div>
           </template>
         </van-grid-item>
       </van-grid>
@@ -133,12 +137,16 @@ export default {
   },
   methods: {
     async getGroupInfo () {
-      const res = await getGroupInfo()
-      console.log(res)
-      if (res.data.status === 200) {
-        this.groupInfo = res.data.body
-      } else {
-        console.log(res.data.description)
+      try {
+        const res = await getGroupInfo()
+        // console.log(res)
+        if (res.data.status === 200) {
+          this.groupInfo = res.data.body
+        } else {
+          console.log(res.data.description)
+        }
+      } catch (error) {
+        console.log(error)
       }
     },
     onSearch () { }
@@ -215,9 +223,9 @@ export default {
       color: #787d82;
     }
   }
-  .van-grid{
-    .van-grid-item{
-      p{
+  .van-grid {
+    .van-grid-item {
+      p {
         font-size: 14px;
         color: #333;
         font-weight: 400;

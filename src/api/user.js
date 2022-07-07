@@ -1,11 +1,10 @@
 import request from '@/utils/request.js'
-import store from '@/store/index'
-
+/**
+ * 获取用户信息接口
+ * @returns
+ */
 export const getUserInfo = () => {
   return request({
-    url: '/user',
-    headers: {
-      Authorization: store.state.token
-    }
+    url: '/user'
   })
 }

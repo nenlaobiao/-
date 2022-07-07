@@ -79,7 +79,7 @@ export default {
             // on cancel
           })
       } else {
-        this.$router.push({ path: '/login' })
+        this.$router.push('/login')
         console.log('登录')
       }
     },
@@ -103,10 +103,8 @@ export default {
       try {
         const res = await LogoutAPI()
         console.log(res)
-        if (res.data.status === 200) {
-          this.removeToken()
-          this.userInfo = {}
-        }
+        this.removeToken()
+        this.userInfo = {}
       } catch (error) {
         console.log(error)
       }

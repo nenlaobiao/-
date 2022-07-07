@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home'
-import Layout from '@/views/Layout'
-import User from '@/views/User'
-import HouseList from '@/views/HouseList'
-import InfoList from '@/views/InfoList'
-import Login from '@/views/Login'
-import Address from '@/views/Address'
+const Home = () => import('@/views/Home')
+const Layout = () => import('@/views/Layout')
+const User = () => import('@/views/User')
+const HouseList = () => import('@/views/HouseList')
+const InfoList = () => import('@/views/InfoList')
+const Login = () => import('@/views/Login')
+const Address = () => import('@/views/Address')
+const House = () => import('@/views/House')
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,7 +23,8 @@ const routes = [
     ]
   },
   { path: '/login', component: Login },
-  { path: '/address', component: Address }
+  { path: '/address', component: Address },
+  { path: '/house/:houseid', component: House, name: 'house', props: true }
 
 ]
 
