@@ -14,7 +14,12 @@
         }}</van-button>
       </template>
       <template #action>
-        <van-icon name="location-o" size="large " color="#fff" />
+        <van-icon
+          name="location-o"
+          size="large "
+          @click="$router.push('/map')"
+          color="#fff"
+        />
       </template>
     </van-search>
 
@@ -71,7 +76,7 @@
           <h2>合租</h2>
         </template>
       </van-grid-item>
-      <van-grid-item>
+      <van-grid-item @click="$router.push('/map')">
         <template #icon>
           <img
             src="@/assets/home3.png"
@@ -83,7 +88,7 @@
           <h2>地图找房</h2>
         </template>
       </van-grid-item>
-      <van-grid-item>
+      <van-grid-item @click="$router.push('/lease')">
         <template #icon>
           <img
             src="@/assets/home4.png"

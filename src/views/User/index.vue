@@ -38,8 +38,20 @@
       </div>
     </div>
     <van-grid :column-num="3" :border="false">
-      <van-grid-item icon="star-o" text="我的收藏" />
-      <van-grid-item icon="wap-home-o" text="我的出租" />
+      <van-grid-item
+        icon="star-o"
+        text="我的收藏"
+        @click="
+          $router.push({ path: '/collection', query: { title: '我的收藏' } })
+        "
+      />
+      <van-grid-item
+        icon="wap-home-o"
+        text="我的出租"
+        @click="
+          $router.push({ path: '/collection', query: { title: '我的出租' } })
+        "
+      />
       <van-grid-item icon="clock-o" text="看房记录" />
       <van-grid-item icon="credit-pay" text="成为房主" />
       <van-grid-item icon="user-o" text="个人资料" />
