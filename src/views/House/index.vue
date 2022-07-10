@@ -157,7 +157,7 @@ export default {
     }
   }
   .title {
-    padding: 0 10px;
+    padding: 0 10px 50px;
     h2 {
       font-size: 16px;
       font-weight: 400;
